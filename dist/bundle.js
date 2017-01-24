@@ -22104,7 +22104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                ),
 	                _react2.default.createElement(
 	                    _FormControl2.default,
-	                    _extends({ ref: 'control' }, this.inputProps),
+	                    _extends({ ref: 'control' }, this.inputProps, { componentClass: this.props.type }),
 	                    this.props.children
 	                ),
 	                _react2.default.createElement(_FormControl2.default.Feedback, null),
