@@ -1,5 +1,7 @@
 import React from 'react';
 import FormControl from 'react-bootstrap/lib/FormControl';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import ControlLabel from 'react-bootstrap/lib/ControlLabel';
 
 export default class ValidatedInput extends React.Component {
     constructor(props) {
@@ -23,7 +25,14 @@ export default class ValidatedInput extends React.Component {
     }
 
     render() {
-        return <FormControl ref='control' {...this.inputProps}>{this.props.children}</FormControl>;
+        return (
+            <FormGroup controlId={this.props.name}>
+                <ControlLabel>{this.props.label}</ControlLabel>
+                <FormControl ref="control" {...this.inputProps}>{this.props.children}</FormControl>
+                <FormControl.Feedback/>
+            </FormGroup>
+            //<FormControl ref='control' {...this.inputProps}>{this.props.children}</FormControl>;
+        )
     }
 }
 
