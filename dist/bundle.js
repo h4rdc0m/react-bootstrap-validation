@@ -22090,7 +22090,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        value: function render() {
 	            return _react2.default.createElement(
 	                _FormGroup2.default,
-	                { controlId: this.props.name },
+	                { controlId: this.props.name, validationState: this.props.validate },
 	                _react2.default.createElement(
 	                    _ControlLabel2.default,
 	                    null,
