@@ -25,6 +25,7 @@ export default class ValidatedInput extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <FormGroup controlId={this.props.name} validationState={this.props.validate}>
                 <ControlLabel>{this.props.label}</ControlLabel>

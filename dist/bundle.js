@@ -22088,6 +22088,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: 'render',
 	        value: function render() {
+	            console.log(this.props);
 	            return _react2.default.createElement(
 	                _FormGroup2.default,
 	                { controlId: this.props.name, validationState: this.props.validate },
