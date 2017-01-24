@@ -22089,9 +22089,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: 'render',
 	        value: function render() {
 	            console.log(this.props);
+	            var bsStyle = this.props.bsStyle;
+	
+	            var error = bsStyle == 'error';
 	            return _react2.default.createElement(
 	                _FormGroup2.default,
-	                { controlId: this.props.name, validationState: this.props.validate },
+	                { controlId: this.props.name, validationState: this.props.bsStyle },
 	                _react2.default.createElement(
 	                    _ControlLabel2.default,
 	                    null,

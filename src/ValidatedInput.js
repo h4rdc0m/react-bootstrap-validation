@@ -26,8 +26,10 @@ export default class ValidatedInput extends React.Component {
 
     render() {
         console.log(this.props);
+        const { bsStyle } = this.props;
+        const error = (bsStyle == 'error' )
         return (
-            <FormGroup controlId={this.props.name} validationState={this.props.validate}>
+            <FormGroup controlId={this.props.name} validationState={this.props.bsStyle}>
                 <ControlLabel>{this.props.label}</ControlLabel>
                 <FormControl ref="control" {...this.inputProps}>{this.props.children}</FormControl>
                 <FormControl.Feedback/>
