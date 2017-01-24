@@ -22107,7 +22107,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    _extends({ ref: 'control' }, this.inputProps),
 	                    this.props.children
 	                ),
-	                _react2.default.createElement(_FormControl2.default.Feedback, null)
+	                _react2.default.createElement(_FormControl2.default.Feedback, null),
+	                this.props.help
 	            )
 	            //<FormControl ref='control' {...this.inputProps}>{this.props.children}</FormControl>;
 	            ;

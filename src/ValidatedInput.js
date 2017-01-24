@@ -33,6 +33,7 @@ export default class ValidatedInput extends React.Component {
                 <ControlLabel>{this.props.label}</ControlLabel>
                 <FormControl ref="control" {...this.inputProps}>{this.props.children}</FormControl>
                 <FormControl.Feedback/>
+                {this.props.help}
             </FormGroup>
             //<FormControl ref='control' {...this.inputProps}>{this.props.children}</FormControl>;
         )
