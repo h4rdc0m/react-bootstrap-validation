@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl } from 'react-bootstrap';
+import FormControl from 'react-bootstrap/lib/FormControl';
 
 export default class ValidatedInput extends React.Component {
     constructor(props) {
