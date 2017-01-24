@@ -302,6 +302,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        } else if (child.props.errorHelp) {
 	                            newProps.help = (0, _reactAddonsCreateFragment2.default)(child.props.errorHelp);
 	                        }
+	                    } else {
+	                        newProps.bsStyle = 'success';
 	                    }
 	
 	                    return {
