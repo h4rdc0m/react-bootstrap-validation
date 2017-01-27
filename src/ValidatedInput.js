@@ -31,7 +31,7 @@ export default class ValidatedInput extends React.Component {
         return (
             <FormGroup controlId={this.props.name} validationState={this.props.bsStyle}>
                 <ControlLabel>{this.props.label}</ControlLabel>
-                <FormControl ref="control" {...this.inputProps} componentClass={this.props.type}>{this.props.children}</FormControl>
+                <FormControl ref="control" {...this.inputProps} componentClass={(this.props.type == 'textarea' ? this.props.type : null)}>{this.props.children}</FormControl>
                 <FormControl.Feedback/>
                 <div className={bsStyle}>{this.props.help}</div>
             </FormGroup>
