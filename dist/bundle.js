@@ -22091,7 +22091,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, {
 	        key: '_renderElement',
 	        value: function _renderElement() {
-	            if (this.props == 'textarea') {
+	            if (this.props.type == 'textarea') {
 	                return _react2.default.createElement(
 	                    _FormControl2.default,
 	                    _extends({ ref: 'control' }, this.inputProps, {

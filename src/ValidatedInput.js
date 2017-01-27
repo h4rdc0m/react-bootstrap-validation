@@ -26,7 +26,7 @@ export default class ValidatedInput extends React.Component {
     }
 
     _renderElement() {
-        if (this.props == 'textarea') {
+        if (this.props.type == 'textarea') {
             return <FormControl ref="control" {...this.inputProps}
                                 componentClass={this.props.type}>{this.props.children}</FormControl>
         } else {
