@@ -10,6 +10,7 @@ export default class ValidatedInput extends React.Component {
         const {validationEvent, validate, errorHelp, _registerInput, _unregisterInput, ...inputProps} = props;
         this._registerInput = _registerInput;
         this._unregisterInput = _unregisterInput;
+        this._renderElement = this._renderElement.bind(this);
         this.inputProps = inputProps;
         if (!this._registerInput || !this._unregisterInput) {
             throw new Error('Input must be placed inside the Form component');
@@ -24,6 +25,14 @@ export default class ValidatedInput extends React.Component {
         this._unregisterInput(this);
     }
 
+    _renderElement() {
+        if (this.props == 'textarea') {
+            return <FormControl ref="control" {...this.inputProps}
+                                componentClass={this.props.type}>{this.props.children}</FormControl>
+        } else {
+            return <FormControl ref="control" {...this.inputProps}>{this.props.children}</FormControl>
+        }
+    }
     render() {
         console.log(this.props);
         const { bsStyle } = this.props;
@@ -31,7 +40,7 @@ export default class ValidatedInput extends React.Component {
         return (
             <FormGroup controlId={this.props.name} validationState={this.props.bsStyle}>
                 <ControlLabel>{this.props.label}</ControlLabel>
-                <FormControl ref="control" {...this.inputProps} componentClass={(this.props.type == 'textarea' ? this.props.type : null)}>{this.props.children}</FormControl>
+                {this._renderElement()}
                 <FormControl.Feedback/>
                 <div className={bsStyle}>{this.props.help}</div>
             </FormGroup>

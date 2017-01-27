@@ -22070,6 +22070,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        _this._registerInput = _registerInput;
 	        _this._unregisterInput = _unregisterInput;
+	        _this._renderElement = _this._renderElement.bind(_this);
 	        _this.inputProps = inputProps;
 	        if (!_this._registerInput || !_this._unregisterInput) {
 	            throw new Error('Input must be placed inside the Form component');
@@ -22088,6 +22089,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this._unregisterInput(this);
 	        }
 	    }, {
+	        key: '_renderElement',
+	        value: function _renderElement() {
+	            if (this.props == 'textarea') {
+	                return _react2.default.createElement(
+	                    _FormControl2.default,
+	                    _extends({ ref: 'control' }, this.inputProps, {
+	                        componentClass: this.props.type }),
+	                    this.props.children
+	                );
+	            } else {
+	                return _react2.default.createElement(
+	                    _FormControl2.default,
+	                    _extends({ ref: 'control' }, this.inputProps),
+	                    this.props.children
+	                );
+	            }
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            console.log(this.props);
@@ -22102,11 +22121,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    null,
 	                    this.props.label
 	                ),
-	                _react2.default.createElement(
-	                    _FormControl2.default,
-	                    _extends({ ref: 'control' }, this.inputProps, { componentClass: this.props.type == 'textarea' ? this.props.type : null }),
-	                    this.props.children
-	                ),
+	                this._renderElement(),
 	                _react2.default.createElement(_FormControl2.default.Feedback, null),
 	                _react2.default.createElement(
 	                    'div',
